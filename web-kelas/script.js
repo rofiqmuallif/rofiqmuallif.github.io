@@ -1,7 +1,7 @@
 /* Update these values when the class administrator changes access credentials. */
 const LOGIN_CREDENTIALS = Object.freeze({
-  username: 'ti-a-2024',
-  password: 'armata2024'
+  username: 'armata',
+  password: '2024'
 });
 const DESTINATION_URL = 'https://s.id/tekno_a';
 
