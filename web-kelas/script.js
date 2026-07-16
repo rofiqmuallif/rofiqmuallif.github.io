@@ -3,7 +3,7 @@ const LOGIN_CREDENTIALS = Object.freeze({
   username: 'armata',
   password: '2024'
 });
-const DESTINATION_URL = 'https://s.id/tekno_a';
+const DESTINATION_URL = '../kelas/';
 
 const form = document.querySelector('#login-form');
 const submitButton = form.querySelector('.submit-button');
@@ -42,6 +42,7 @@ form.addEventListener('submit', event => {
   window.setTimeout(() => {
     const isValid = username === LOGIN_CREDENTIALS.username && password === LOGIN_CREDENTIALS.password;
     if (isValid) {
+      sessionStorage.setItem('tiAClassAccess', 'granted');
       window.location.assign(DESTINATION_URL);
       return;
     }
