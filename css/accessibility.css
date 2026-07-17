@@ -2,10 +2,7 @@
   Production guardrails
   Kept separate from the compact visual stylesheet so accessibility and
   progressive-enhancement rules stay easy to audit and maintain.
-*/
-
-/* Keyboard navigation */
-.skip-link {
+*/ /* Keyboard navigation */ .skip-link  {
   background: var(--accent);
   border-radius: 0 0 .5rem .5rem;
   color: #08223b;
@@ -17,29 +14,33 @@
   transition: top .2s ease;
   z-index: 100;
 }
-
-.skip-link:focus { top: 0; }
-
-:focus-visible {
+.skip-link:focus  {
+  top: 0;
+}
+:focus-visible  {
   outline: 3px solid var(--accent);
   outline-offset: 4px;
 }
-
-/* Avoid relying on a pointer hover state for interactive feedback. */
-.button, .arrow-link, .social-links a, .nav-cta, .text-link, .project-links a {
+/* Avoid relying on a pointer hover state for interactive feedback. */ .button, .arrow-link, .social-links a, .nav-cta, .text-link, .project-links a  {
   min-height: 44px;
 }
-
-.button, .nav-cta, .text-link, .project-links a { justify-content: center; }
-
-/* Improve text wrapping and prevent horizontal overflow on narrow screens. */
-body { text-wrap: pretty; }
-.hero-copy, .about-copy, .section-heading, .project-meta, .contact-card { min-width: 0; }
-.project-meta h3, .contact-mail { overflow-wrap: anywhere; }
-img { display: block; max-width: 100%; }
-
-/* Semantic progress bars retain the existing visual treatment. */
-.skill-list .skill-meter {
+.button, .nav-cta, .text-link, .project-links a  {
+  justify-content: center;
+}
+/* Improve text wrapping and prevent horizontal overflow on narrow screens. */ body  {
+  text-wrap: pretty;
+}
+.hero-copy, .about-copy, .section-heading, .project-meta, .contact-card  {
+  min-width: 0;
+}
+.project-meta h3, .contact-mail  {
+  overflow-wrap: anywhere;
+}
+img  {
+  display: block;
+  max-width: 100%;
+}
+/* Semantic progress bars retain the existing visual treatment. */ .skill-list .skill-meter  {
   background: #334155;
   border-radius: 5px;
   display: block;
@@ -48,8 +49,7 @@ img { display: block; max-width: 100%; }
   overflow: hidden;
   position: relative;
 }
-
-.skill-list .skill-meter::after {
+.skill-list .skill-meter::after  {
   background: linear-gradient(90deg, var(--primary), var(--accent));
   border-radius: inherit;
   content: "";
@@ -58,34 +58,56 @@ img { display: block; max-width: 100%; }
   transition: width 1.1s cubic-bezier(.2, .8, .2, 1);
   width: 0;
 }
-
-.skill-card.active .skill-meter::after { width: var(--level); }
-
-/* The static site remains usable if JavaScript is unavailable. */
-@media (max-width: 760px) {
-  .no-js .menu-toggle { display: none; }
-  .no-js .nav { align-items: flex-start; height: auto; min-height: 70px; padding-block: 18px; }
-  .no-js .nav-links { display: flex; flex-direction: column; gap: .45rem; margin: 0; padding-top: .3rem; }
-  .no-js .nav-cta { display: none; }
-
-  .project-meta { align-items: flex-start; flex-direction: column; }
-  .project-links { align-items: flex-start; flex-direction: row; flex-wrap: wrap; }
-  .contact-mail { font-size: clamp(1rem, 5vw, 1.25rem); }
+.skill-card.active .skill-meter::after  {
+  width: var(--level);
 }
-
-/* Meet user motion preferences and make initial content available immediately. */
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+/* The static site remains usable if JavaScript is unavailable. */ @media (max-width: 760px)  {
+  .no-js .menu-toggle  {
+    display: none;
+  }
+  .no-js .nav  {
+    align-items: flex-start;
+    height: auto;
+    min-height: 70px;
+    padding-block: 18px;
+  }
+  .no-js .nav-links  {
+    display: flex;
+    flex-direction: column;
+    gap: .45rem;
+    margin: 0;
+    padding-top: .3rem;
+  }
+  .no-js .nav-cta  {
+    display: none;
+  }
+  .project-meta  {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .project-links  {
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .contact-mail  {
+    font-size: clamp(1rem, 5vw, 1.25rem);
+  }
+}
+/* Meet user motion preferences and make initial content available immediately. */ @media (prefers-reduced-motion: reduce)  {
+  *, *::before, *::after  {
     animation-duration: .01ms !important;
     animation-iteration-count: 1 !important;
     scroll-behavior: auto !important;
     transition-duration: .01ms !important;
   }
-
-  .reveal { opacity: 1; transform: none; }
+  .reveal  {
+    opacity: 1;
+    transform: none;
+  }
 }
-
-/* Use expensive blur effects only where browsers support them. */
-@supports not (backdrop-filter: blur(1px)) {
-  .site-header.scrolled, .floating-card { background: rgba(15, 23, 42, .96); }
+/* Use expensive blur effects only where browsers support them. */ @supports not (backdrop-filter: blur(1px))  {
+  .site-header.scrolled, .floating-card  {
+    background: rgba(15, 23, 42, .96);
+  }
 }

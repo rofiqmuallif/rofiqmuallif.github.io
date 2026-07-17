@@ -1,1 +1,19 @@
-if(sessionStorage.getItem('tiAClassAccess')!=='granted')window.location.replace('../web-kelas/');const toggle=document.querySelector('.nav-toggle'),links=document.querySelector('.links');if(toggle)toggle.addEventListener('click',()=>links.classList.toggle('open'));document.querySelectorAll('[data-image]').forEach(item=>item.addEventListener('click',()=>{document.querySelector('.lightbox img').src=item.dataset.image;document.querySelector('.lightbox').classList.add('open')}));document.querySelector('.lightbox button')?.addEventListener('click',()=>document.querySelector('.lightbox').classList.remove('open'));
+if (sessionStorage.getItem('tiAClassAccess') !== 'granted') {
+  window.location.replace('../web-kelas/');
+}
+
+const toggle = document.querySelector('.nav-toggle');
+const links = document.querySelector('.links');
+
+if (toggle) {
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+}
+
+document.querySelectorAll('[data-image]').forEach((item) => item.addEventListener('click', () => {
+  document.querySelector('.lightbox img').src=item.dataset.image;
+  document.querySelector('.lightbox').classList.add('open');
+}));
+
+document.querySelector('.lightbox button')?.addEventListener('click', () => {
+  document.querySelector('.lightbox').classList.remove('open');
+});
