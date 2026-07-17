@@ -1076,22 +1076,25 @@ h1 em,h2 em {
     width:min(100% - 34px,600px)
   }
   .nav {
-    height:70px
+    height:70px;
+    gap:10px
   }
   .nav-links,.nav-cta {
     display:none
   }
   .menu-toggle {
     display:flex;
-    width:39px;
-    height:35px;
+    width:36px;
+    height:32px;
     border:1px solid var(--line);
     border-radius:8px;
     background:transparent;
     flex-direction:column;
     justify-content:center;
     align-items:center;
-    gap:5px
+    gap:4px;
+    padding:0;
+    margin-left:auto
   }
   .menu-toggle span {
     width:15px;
