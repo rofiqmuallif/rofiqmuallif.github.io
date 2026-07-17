@@ -5,6 +5,10 @@ const navLinks = document.querySelector('.nav-links');
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 document.body.classList.remove('no-js');
 
+if (!menuButton || !navLinks) {
+  throw new Error('Navigation elements not found');
+}
+
 // Avoid doing visual work on every browser scroll event.
 let scrollTicking = false;
 function updateHeader() {
@@ -28,6 +32,13 @@ navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', ()
   menuButton.setAttribute('aria-expanded', 'false');
   menuButton.setAttribute('aria-label', 'Open navigation');
 }));
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 760) {
+    navLinks.classList.remove('open');
+    menuButton.setAttribute('aria-expanded', 'false');
+    menuButton.setAttribute('aria-label', 'Open navigation');
+  }
+});
 
 // Typing animation. Respect users who ask for reduced motion.
 const roles = ['Information Technology Student', 'Software Developer', 'Graphic Designer', 'Content Creator'];

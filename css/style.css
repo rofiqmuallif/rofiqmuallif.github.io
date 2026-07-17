@@ -71,7 +71,8 @@ body {
   height:84px;
   display:flex;
   align-items:center;
-  justify-content:space-between
+  justify-content:space-between;
+  position:relative
 }
 .logo {
   font:700 23px var(--font-head);
@@ -1100,16 +1101,18 @@ h1 em,h2 em {
   .nav-links.open {
     display:flex;
     position:absolute;
-    top:61px;
-    left:17px;
-    right:17px;
+    top:calc(100% + 8px);
+    left:0;
+    right:0;
+    z-index:20;
     margin:0;
     padding:19px;
     gap:15px;
     flex-direction:column;
-    background:#172338;
+    background:rgba(15,23,42,.97);
     border:1px solid var(--line);
-    border-radius:12px
+    border-radius:12px;
+    box-shadow:0 14px 36px rgba(2,6,23,.35)
   }
   .hero {
     padding-top:128px;
