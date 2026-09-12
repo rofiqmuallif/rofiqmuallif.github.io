@@ -1,11 +1,12 @@
 :root {
-  --bg:#0f172a;
-  --surface:rgba(30,41,59,.68);
-  --text:#f8fafc;
-  --muted:#a5b4c8;
-  --line:rgba(203,213,225,.14);
-  --primary:#2563eb;
-  --accent:#38bdf8
+  --bg:#f7f9fc;
+  --surface:#ffffff;
+  --text:#111827;
+  --muted:#64748b;
+  --line:#dbe3ee;
+  --primary:#0b1f3a;
+  --accent:#163f73;
+  --navy-soft:#eaf1f8
 }
 * {
   box-sizing:border-box
@@ -22,8 +23,8 @@ body {
 }
 .site-header {
   padding:18px 0;
-  border-bottom:1px solid var(--line);
-  background:rgba(15,23,42,.74);
+  border-bottom:1px solid #102a4c;
+  background:var(--primary);
   backdrop-filter:blur(16px)
 }
 .nav {
@@ -50,13 +51,13 @@ body {
   align-items:center
 }
 .links a {
-  color:var(--muted);
+  color:#cbd5e1;
   text-decoration:none;
   font-size:11px;
   transition:.2s
 }
 .links a:hover,.links a.active {
-  color:var(--accent)
+  color:#fff
 }
 main {
   padding:72px 0
@@ -78,7 +79,7 @@ h1 {
 }
 h1 span {
   color:transparent;
-  background:linear-gradient(110deg,var(--accent),#7698ff);
+  background:linear-gradient(110deg,var(--primary),var(--accent));
   background-clip:text
 }
 .intro {
@@ -102,7 +103,7 @@ h1 span {
   display:block;
   border-radius:18px;
   border:1px solid var(--line);
-  box-shadow:0 18px 36px rgba(15,23,42,.35);
+  box-shadow:0 18px 36px rgba(11,31,58,.16);
   object-fit:cover
 }
 .brand-copy {
@@ -121,19 +122,25 @@ h1 span {
   padding:11px 15px;
   border:1px solid var(--line);
   border-radius:10px;
-  color:var(--text);
+  color:var(--primary);
+  background:#fff;
   font-size:12px;
   font-weight:600;
   text-decoration:none;
   transition:.25s
 }
 .button.primary {
-  border-color:transparent;
+  border-color:var(--primary);
   background:var(--primary);
-  box-shadow:0 10px 24px rgba(37,99,235,.24)
+  color:#fff;
+  box-shadow:0 10px 24px rgba(11,31,58,.2)
 }
 .button:hover,.card:hover {
   transform:translateY(-5px)
+}
+.button:not(.primary):hover {
+  border-color:var(--accent);
+  background:var(--navy-soft)
 }
 .grid {
   display:grid;
@@ -146,12 +153,16 @@ h1 span {
   border:1px solid var(--line);
   border-radius:15px;
   background:var(--surface);
-  box-shadow:0 12px 30px rgba(0,0,0,.1);
+  box-shadow:0 10px 25px rgba(15,23,42,.07);
   transition:.25s
 }
 .card i {
   color:var(--accent);
   font-size:20px
+}
+.card:hover {
+  border-color:#9ab1ca;
+  box-shadow:0 16px 30px rgba(15,23,42,.12)
 }
 .card h3 {
   margin:14px 0 7px;
@@ -196,16 +207,16 @@ h1 span {
   font-weight:600
 }
 .todo {
-  background:rgba(251,191,36,.16);
-  color:#fcd34d
+  background:#fff5d6;
+  color:#9a6700
 }
 .doing {
-  background:rgba(56,189,248,.15);
+  background:#eaf1f8;
   color:var(--accent)
 }
 .done {
-  background:rgba(74,222,128,.15);
-  color:#86efac
+  background:#e9f8ef;
+  color:#167044
 }
 .table-wrap {
   overflow:auto;
@@ -240,7 +251,7 @@ th {
   height:65px;
   margin:auto;
   border-radius:50%;
-  background:linear-gradient(140deg,#2563eb,#38bdf8);
+  background:linear-gradient(140deg,var(--primary),var(--accent));
   color:white;
   font-size:21px
 }
@@ -340,7 +351,7 @@ th {
     padding:16px;
     border:1px solid var(--line);
     border-radius:12px;
-    background:#172338
+    background:var(--primary)
   }
   .grid {
     grid-template-columns:1fr
