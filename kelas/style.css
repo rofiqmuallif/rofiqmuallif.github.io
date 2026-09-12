@@ -33,6 +33,17 @@ body {
   justify-content:space-between;
   gap:20px
 }
+.nav-logo {
+  display:inline-flex;
+  flex:0 0 auto;
+  align-items:center
+}
+.nav-logo img {
+  display:block;
+  width:42px;
+  height:42px;
+  object-fit:contain
+}
 .brand {
   color:var(--text);
   text-decoration:none;
@@ -338,6 +349,10 @@ th {
     background:transparent;
     color:#fff;
     padding:7px 10px
+  }
+  .nav-logo img {
+    width:36px;
+    height:36px
   }
   .links {
     display:none
